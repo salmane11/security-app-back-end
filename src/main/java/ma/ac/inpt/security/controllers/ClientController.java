@@ -110,9 +110,8 @@ public class ClientController {
 	}
 	
 	// Reception interface
-	// Initialize the branch
 	@GetMapping("/reception/{id}")
-	public ResponseEntity<?> Reception(@PathVariable("id") Long id){
+	public ResponseEntity<?> Reception(@PathVariable("id") String id){
 		return ResponseEntity.ok()
 				.body(orderRepository.findAllClientOrders(id));
 	}
