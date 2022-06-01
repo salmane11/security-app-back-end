@@ -40,8 +40,8 @@ public class OrderController {
 		@ResponseBody
 		public ResponseEntity<HttpStatus> addOrder(@RequestBody Orders order){
 			Orders newOrder=new Orders();
-			if(order.getOrder_date()!=null) {
-				newOrder.setOrder_date(order.getOrder_date());
+			if(order.getOrderDate()!=null) {
+				newOrder.setOrderDate(order.getOrderDate());
 			}
 			if(order.getClient()!=null) {
 				newOrder.setClient(order.getClient());
@@ -54,8 +54,8 @@ public class OrderController {
 		@ResponseBody
 		public ResponseEntity<HttpStatus> updateOrder(@PathVariable Long id,@RequestBody Orders order){
 			Orders registredOrder=orderRepository.findById(id).get();
-			if(order.getOrder_date()!=null) {
-				registredOrder.setOrder_date(order.getOrder_date());
+			if(order.getOrderDate()!=null) {
+				registredOrder.setOrderDate(order.getOrderDate());
 			}
 			if(order.getClient()!=null) {
 				registredOrder.setClient(order.getClient());

@@ -5,16 +5,14 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import ma.ac.inpt.security.models.Orders;
-import ma.ac.inpt.security.models.Client;
 
+@Repository 
 public interface OrderRepository extends JpaRepository<Orders, Long>{
 	
-	List<Orders> findAllbyClient(Client client);
-	
-	@Query(value = "SELECT order_id, client_id, order_date, libelle FROM security_db.orders WHERE client_id=:id", nativeQuery= true)
+	@Query(value = "SELECT order_id, client_id, order_date, libelle FROM orders WHERE client_id=:id", nativeQuery= true)
 	List<Orders> findAllClientOrders(Long id);
-	
 	
 }

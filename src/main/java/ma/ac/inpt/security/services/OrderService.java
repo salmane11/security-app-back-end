@@ -2,8 +2,11 @@ package ma.ac.inpt.security.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import ma.ac.inpt.security.models.Orders;
 
+@Service
 public interface OrderService {
 	public Orders addOrder(Orders order);
 	public List<Orders> getAllOrders();

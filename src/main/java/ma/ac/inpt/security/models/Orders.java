@@ -22,17 +22,22 @@ public class Orders {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	long order_id;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date order_date;
+
+	private String libelle;
 	
 	@ManyToOne
-	@JoinColumn(name="client_id")
-	Client client;
+	@JoinColumn(name="client_id", referencedColumnName = "client_id")
+	private Client client;
 	
-	private String libelle;
 
 	public Orders() {
 		super();
+	}
+	public Orders(Date order_date, Client client) {
+		super();
+		this.order_date = order_date;
+		this.client = client;
 	}
 
 	public long getOrder_id() {
@@ -42,10 +47,10 @@ public class Orders {
 		this.order_id = order_id;
 	}
 
-	public Date getOrder_date() {
+	public Date getOrderDate() {
 		return order_date;
 	}
-	public void setOrder_date(Date order_date) {
+	public void setOrderDate(Date order_date) {
 		this.order_date = order_date;
 	}
 
