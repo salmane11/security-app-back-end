@@ -14,14 +14,13 @@ public class Client {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	long client_id;
-	
-	String first_name;
-	String last_name;
-	int age;
+	private long client_id;
+	private String first_name;
+	private String last_name;
+	private int age;
 	
 	@OneToMany(mappedBy="client")
-	List<Orders> orders=new  ArrayList<Orders>();
+	private List<Orders> orders = new ArrayList<Orders>();
 	
 	
 	public Client(long client_id, String first_name, String last_name, int age) {
@@ -33,7 +32,7 @@ public class Client {
 
 
 	public Client() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 

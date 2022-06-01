@@ -108,5 +108,12 @@ public class ClientController {
 		clientRepository.deleteById(id);
 		return new ResponseEntity<HttpStatus>(HttpStatus.ACCEPTED);
 	}
+	
+	//Reception interface
+	@GetMapping("/reception/{id}")
+	public ResponseEntity<?> Reception(@PathVariable("id") Long id){
+		return ResponseEntity.ok()
+				.body(orderRepository.findAllClientOrders(id));
+	}
 
 }
