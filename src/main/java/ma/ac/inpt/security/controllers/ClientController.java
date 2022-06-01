@@ -109,7 +109,8 @@ public class ClientController {
 		return new ResponseEntity<HttpStatus>(HttpStatus.ACCEPTED);
 	}
 	
-	//Reception interface
+	// Reception interface
+	// Initialize the branch
 	@GetMapping("/reception/{id}")
 	public ResponseEntity<?> Reception(@PathVariable("id") Long id){
 		return ResponseEntity.ok()
