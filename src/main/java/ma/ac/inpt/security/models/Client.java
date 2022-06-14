@@ -18,6 +18,8 @@ public class Client {
 	
 	String first_name;
 	String last_name;
+	String image;
+	
 	int age;
 	
 	@OneToMany(mappedBy="client")
@@ -60,6 +62,14 @@ public class Client {
 		this.last_name = last_name;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	public int getAge() {
 		return age;
